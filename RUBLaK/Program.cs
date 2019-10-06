@@ -33,15 +33,16 @@ namespace RUBLaK
 			{
 				string action = args[0];
 				string ip = GetLocalIPAddress();
-
+				string username = args.Length == 3 ? args[1] : Properties.Settings1.Default.loginID;
+				string password = args.Length == 3 ? args[2] : Properties.Settings1.Default.password;
 
 				using (WebClient client = new WebClient())
 				{
 					byte[] response = client.UploadValues("https://login.rz.ruhr-uni-bochum.de/cgi-bin/laklogin", new NameValueCollection()
 					{
 						{ "code", "1" },
-						{ "loginid", Properties.Settings1.Default.loginID },
-						{ "password", Properties.Settings1.Default.password },
+						{ "loginid",  username},
+						{ "password",  password},
 						{ "ipaddr", ip },
 						{ "action", action }
 					});
