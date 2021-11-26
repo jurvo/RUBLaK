@@ -10,3 +10,6 @@ Startargumente des Programs:
 	Aktualisiert die Anmeldeinformationen.
 - "reset":
 	Setzt die Anmeldedaten auf default-Werte.
+
+
+rublak.py ist ein python script für die automatisierte Anmeldung.
